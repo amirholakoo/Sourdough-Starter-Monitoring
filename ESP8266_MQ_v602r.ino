@@ -24,12 +24,12 @@ const int ledTempHumid = 2;
 const int ledGas = 16;
 
 //// Replace with your network credentials
-const char* ssid     = "VPN1";
-const char* password = "09126141426";
+const char* ssid     = "XXXXXXXX";
+const char* password = "XXXXXXXX";
 
 // REPLACE with your Domain name and URL path or IP address with path
 const char* serverName = "http://192.168.1.88/Monitoring/post-data.php";
-String apiKeyValue = "tPmAT5Ab3j7F9";
+
 
 //OLED Display
 #define SCREEN_WIDTH 128 // OLED display width, in pixels
