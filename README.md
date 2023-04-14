@@ -1,5 +1,5 @@
 # Sourdough Monitoring System
-## Please note that I'm not a programmer nor sourdough bread expert, I'm just enthusiast.
+## Please note that I'm not a programmer nor sourdough bread expert, I'm just an enthusiast.
 
 This sourdough monitoring system uses various sensors to monitor temperature, humidity, CO2 levels, and alcohol content in a sourdough starter. It displays the sensor values on an OLED screen and sends the data to a server at specified intervals.
 
