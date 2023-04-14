@@ -2,9 +2,9 @@
 #include <BlynkSimpleEsp8266.h>
 
 // Replace these with your Wi-Fi credentials and Blynk auth token
-const char* ssid = "Amir";
-const char* password = "09126141426";
-const char* auth = "Xqw5OV5sRggQnRHSSh-5qCUCG5yVpC8K";
+const char* ssid = "XXXXXXXX";
+const char* password = "XXXXXXXX";
+const char* auth = "XXXXXXXX";
 
 // Global variables
 unsigned long startMillis;
