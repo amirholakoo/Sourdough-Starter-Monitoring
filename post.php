@@ -25,7 +25,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ($conn->connect_error) {
         die("Connection failed: " . $conn->connect_error);
     }
-
+  
+    // Create table if it doesn't exist
+    $createTableSql = "CREATE TABLE IF NOT EXISTS Sensor (
+        id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+        value1 VARCHAR(30) NOT NULL,
+        value2 VARCHAR(30) NOT NULL,
+        value3 VARCHAR(30) NOT NULL,
+        value4 VARCHAR(30) NOT NULL,
+        value5 VARCHAR(30) NOT NULL,
+        reg_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+    )";
+  
     // Insert data into the 'Sensor' table
     $sql = "INSERT INTO Sensor (value1, value2, value3, value4, value5) VALUES ('" . $value1 . "', '" . $value2 . "', '" . $value3 . "', '" . $value4 . "', '" . $value5 . "')";
 
