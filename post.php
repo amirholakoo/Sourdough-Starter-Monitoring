@@ -8,7 +8,7 @@
 $servername = "localhost";
 $dbname = "Starter";
 $username = "admin";
-$password = "XXXXXXXXX";
+$password = "XXX";
 
 $value1 = $value2 = $value3 = $value4 = $value5 = "";
 
@@ -25,9 +25,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ($conn->connect_error) {
         die("Connection failed: " . $conn->connect_error);
     }
-  
-    // Create table if it doesn't exist
-    $createTableSql = "CREATE TABLE IF NOT EXISTS Sensor (
+    // Check if the table exists, and if not, create it
+	$table_check = "SHOW TABLES LIKE 'Sensor'";
+	$result = $conn->query($table_check);
+	if (!$result) {
+	    die("Query failed: " . $conn->error);
+	}
+
+	if ($result->num_rows == 0) {
+	  $create_table = "CREATE TABLE Sensor (
         id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
         value1 VARCHAR(30) NOT NULL,
         value2 VARCHAR(30) NOT NULL,
@@ -35,7 +41,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         value4 VARCHAR(30) NOT NULL,
         value5 VARCHAR(30) NOT NULL,
         reading_time TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
-    )";
+	)";
+
+
+	  if ($conn->query($create_table) === TRUE) {
+	    echo "Table 'weather_data' created successfully";
+	  } else {
+	    echo "Error creating table: " . $conn->error;
+	  }
+	}
+  
+   
   
     // Insert data into the 'Sensor' table
     $sql = "INSERT INTO Sensor (value1, value2, value3, value4, value5) VALUES ('" . $value1 . "', '" . $value2 . "', '" . $value3 . "', '" . $value4 . "', '" . $value5 . "')";
