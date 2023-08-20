@@ -34,7 +34,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         value3 VARCHAR(30) NOT NULL,
         value4 VARCHAR(30) NOT NULL,
         value5 VARCHAR(30) NOT NULL,
-        reg_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+        reading_time TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
     )";
   
     // Insert data into the 'Sensor' table
