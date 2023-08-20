@@ -3,6 +3,12 @@
 This project is a Sourdough Monitoring System built by an enthusiastic DIYer with the assistance of ChatGPT, an AI language model. It is designed to monitor various environmental variables affecting the sourdough fermentation process, such as temperature, humidity, CO2, and alcohol levels. The system will notify the user if any of the variables exceed the defined thresholds.
 
 ## Disclaimer: 
+Create database: Starter
+
+sudo chown -R admin:www-data /var/www/html
+
+USE Starter;
+
 This project was developed by an enthusiast and not a professional programmer. Please feel free to modify or improve the code as necessary.
 
 ## Introduction
